@@ -9,7 +9,7 @@ from .binarized_modules import  BinarizeLinear,BinarizeConv2d
 class VGG16_Cifar10(nn.Module):
 
     def __init__(self, num_classes=10):
-        super(VGG_Cifar10, self).__init__()
+        super(VGG16_Cifar10, self).__init__()
         self.features = nn.Sequential(
 
             # Block 1
