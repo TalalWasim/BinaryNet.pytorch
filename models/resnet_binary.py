@@ -244,5 +244,9 @@ def resnet_binary(**kwargs):
     elif dataset == 'cifar10':
         num_classes = num_classes or 10
         depth = depth or 18
-        return ResNet_cifar10(num_classes=num_classes,
-                              block=BasicBlock, depth=depth)
+        return ResNet_cifar10(num_classes=num_classes, block=BasicBlock, depth=depth)
+
+    elif dataset == 'cifar100':
+        num_classes = 100
+        depth = 18
+        return ResNet_cifar10(num_classes=num_classes, block=BasicBlock, depth=depth)
