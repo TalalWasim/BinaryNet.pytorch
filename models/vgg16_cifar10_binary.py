@@ -98,4 +98,4 @@ class VGG16_Cifar10(nn.Module):
 
 def vgg16_cifar10_binary(**kwargs):
     num_classes = kwargs.get( 'num_classes', 10)
-    return VGG_Cifar10(num_classes)
+    return VGG16_Cifar10(num_classes)
