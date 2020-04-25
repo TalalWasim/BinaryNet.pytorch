@@ -222,7 +222,7 @@ class ResNet_cifar100(ResNet):
 
     def __init__(self, num_classes=100,
                  block=BasicBlock, depth=18):
-        super(ResNet_cifar10, self).__init__()
+        super(ResNet_cifar100, self).__init__()
         self.inflate = 5
         self.inplanes = 16*self.inflate
         n = int((depth - 2) / 6)
