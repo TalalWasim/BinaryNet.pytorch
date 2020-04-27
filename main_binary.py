@@ -221,12 +221,8 @@ def main():
         checkpoint_file = os.path.join(save_path, 'model_best.pth.tar')
         if os.path.isfile(checkpoint_file):
             checkpoint = torch.load(checkpoint_file,map_location='cpu')
-            best_prec1 = checkpoint['best_prec1']
             model.load_state_dict(checkpoint['state_dict'])
-            model.export()
-            
-        model = torch.load(os.path.join(save_path, 'model_best.pth.tar'), map_location = 'cpu')
-        model.export()
+            model.export(save_path)
 
 def forward(data_loader, model, criterion, epoch=0, training=True, optimizer=None):
     if args.gpus and len(args.gpus) > 1:
