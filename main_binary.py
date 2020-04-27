@@ -47,6 +47,8 @@ parser.add_argument('-j', '--workers', default=8, type=int, metavar='N',
                     help='number of data loading workers (default: 8)')
 parser.add_argument('--epochs', default=2500, type=int, metavar='N',
                     help='number of total epochs to run')
+parser.add_argument('--export', default=False, type=bool, metavar='N',
+                    help='number of total epochs to run')
 parser.add_argument('--start-epoch', default=0, type=int, metavar='N',
                     help='manual epoch number (useful on restarts)')
 parser.add_argument('-b', '--batch-size', default=256, type=int,
@@ -215,6 +217,16 @@ def main():
         #             title='Error@5', ylabel='error %')
         results.save()
 
+    if args.export:
+        checkpoint_file = os.path.join(save_path, 'model_best.pth.tar')
+        if os.path.isfile(checkpoint_file):
+            checkpoint = torch.load(checkpoint_file,map_location='cpu')
+            best_prec1 = checkpoint['best_prec1']
+            model.load_state_dict(checkpoint['state_dict'])
+            model.export()
+            
+        model = torch.load(os.path.join(save_path, 'model_best.pth.tar'), map_location = 'cpu')
+        model.export()
 
 def forward(data_loader, model, criterion, epoch=0, training=True, optimizer=None):
     if args.gpus and len(args.gpus) > 1:
