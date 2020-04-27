@@ -32,13 +32,13 @@ class hcnv_small_cifar10(nn.Module):
         )
         self.classifier = nn.Sequential(
             BinarizeLinear(64, 128, bias=True),
-            nn.BatchNorm1d(128, affine=False),
+            nn.BatchNorm1d(128),
 
             BinarizeLinear(128, 128, bias=True),
-            nn.BatchNorm1d(128, affine=False),
+            nn.BatchNorm1d(128),
 
             BinarizeLinear(128, num_classes, bias=False),
-            nn.BatchNorm1d(num_classes, affine=False),
+            nn.BatchNorm1d(num_classes),
             nn.LogSoftmax()
         )
 

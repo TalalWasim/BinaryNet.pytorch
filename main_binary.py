@@ -222,6 +222,7 @@ def main():
         if os.path.isfile(checkpoint_file):
             checkpoint = torch.load(checkpoint_file,map_location='cpu')
             model.load_state_dict(checkpoint['state_dict'])
+            model.to('cpu')
             model.export(save_path)
 
 def forward(data_loader, model, criterion, epoch=0, training=True, optimizer=None):
