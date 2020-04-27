@@ -35,7 +35,7 @@ class hcnv_small_cifar10(nn.Module):
             nn.BatchNorm1d(128, affine=False),
 
             BinarizeLinear(128, 128, bias=True),
-            nn.BatchNorm1d(num_classes, affine=False),
+            nn.BatchNorm1d(128, affine=False),
 
             BinarizeLinear(128, num_classes, bias=False),
             nn.BatchNorm1d(num_classes, affine=False),
