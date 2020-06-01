@@ -205,16 +205,14 @@ class ResNet_cifar10(ResNet):
         init_model(self)
 
         self.regime = {
-            0: {'optimizer': 'Adam', 'lr': 5e-2, 'weight_decay': 1e-4},
-            50: {'lr': 1e-2},
-            100: {'lr': 5e-3},
-            150: {'lr': 1e-3},
-            200: {'lr': 5e-4, 'weight_decay': 0},
-            250: {'lr': 1e-4},
-            300: {'lr': 5e-5},
-            350: {'lr': 1e-5},
-            400: {'lr': 5e-6},
-            450: {'lr': 1e-6}
+            0: {'optimizer': 'Adam', 'lr': 5e-3},
+            50: {'lr': 1e-3},
+            100: {'lr': 5e-4},
+            150: {'lr': 1e-4},
+            200: {'lr': 5e-5},
+            250: {'lr': 1e-5},
+            300: {'lr': 5e-6},
+            350: {'lr': 1e-6}
         }
 
 class ResNet_cifar100(ResNet):
@@ -244,16 +242,14 @@ class ResNet_cifar100(ResNet):
         init_model(self)
 
         self.regime = {
-            0: {'optimizer': 'Adam', 'lr': 5e-2, 'weight_decay': 1e-4},
-            50: {'lr': 1e-2},
-            100: {'lr': 5e-3},
-            150: {'lr': 1e-3},
-            200: {'lr': 5e-4, 'weight_decay': 0},
-            250: {'lr': 1e-4},
-            300: {'lr': 5e-5},
-            350: {'lr': 1e-5},
-            400: {'lr': 5e-6},
-            450: {'lr': 1e-6}
+            0: {'optimizer': 'Adam', 'lr': 5e-3},
+            50: {'lr': 1e-3},
+            100: {'lr': 5e-4},
+            150: {'lr': 1e-4},
+            200: {'lr': 5e-5},
+            250: {'lr': 1e-5},
+            300: {'lr': 5e-6},
+            350: {'lr': 1e-6}
         }
 
 def resnet_binary(**kwargs):
