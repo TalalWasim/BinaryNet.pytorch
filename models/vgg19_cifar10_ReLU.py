@@ -105,6 +105,6 @@ class VGG19_Cifar10_ReLU(nn.Module):
         return x
 
 
-def vgg19_cifar10_ReLU(**kwargs):
+def vgg19_cifar10_relu(**kwargs):
     num_classes = kwargs.get( 'num_classes', 10)
     return VGG19_Cifar10_ReLU(num_classes)

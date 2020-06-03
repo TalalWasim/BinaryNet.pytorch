@@ -108,6 +108,6 @@ class VGG19_Cifar100_TanH(nn.Module):
         return x
 
 
-def vgg19_cifar100_TanH(**kwargs):
+def vgg19_cifar100_tanh(**kwargs):
     num_classes = kwargs.get( 'num_classes', 100)
     return VGG19_Cifar100_TanH(num_classes)
